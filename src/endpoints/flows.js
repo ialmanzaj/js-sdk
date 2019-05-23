@@ -49,6 +49,14 @@ class FlowsEndpoint extends CRUDExtend {
       'DELETE'
     )
   }
+
+  UpdateEntryRelationship(slug, entryId, fieldSlug, body) {
+    return this.request.send(
+      `${this.endpoint}/${slug}/entries/${entryId}/relationships/${fieldSlug}`,
+      'PUT',
+      {...body}
+    )
+  }
 }
 
 export default FlowsEndpoint
